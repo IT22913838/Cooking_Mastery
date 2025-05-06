@@ -1,5 +1,8 @@
 package com.example.pafbackend.repositories;
 
-public interface NotificationRepository {
+import com.example.pafbackend.models.Notification;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface NotificationRepository extends MongoRepository<Notification, String> {
 
 }
