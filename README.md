@@ -63,15 +63,15 @@ npm start
 ```
 
 ## 🚀 Usage
-    Sign up using email/password or OAuth (Google/Facebook)
+   - Sign up using email/password or OAuth (Google/Facebook)
 
-    Create your profile and start uploading your dishes
+   - Create your profile and start uploading your dishes
 
-    Track your cooking progress and share learning milestones
+   - Track your cooking progress and share learning milestones
 
-    Explore, like, and comment on others’ posts
+   - Explore, like, and comment on others’ posts
 
-    Get real-time updates about engagement through notifications
+   - Get real-time updates about engagement through notifications
 
 
 ## 📸 UI
@@ -82,10 +82,10 @@ npm start
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 👥 Authors
-  Dahanayake U.I.D – GitHub
+ - Dahanayake U.I.D – GitHub
 
-  Team Member 2 – GitHub
+ - Mudalige R M R W – GitHub
 
-  Team Member 3 – GitHub
+ - M P Bhagya – GitHub
 
-  Team Member 4 – GitHub
+ - Wijebandara W M P – GitHub
