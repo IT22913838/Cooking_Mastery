@@ -63,7 +63,7 @@ npm start
 ```
 
 ## 🚀 Usage
-   - Sign up using email/password or OAuth (Google/Facebook)
+   - Sign up using email/password or OAuth (Google)
 
    - Create your profile and start uploading your dishes
 
