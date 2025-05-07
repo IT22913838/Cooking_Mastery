@@ -15,8 +15,8 @@ Cooking Mastery is an innovative web-based platform that empowers food lovers to
 ## 🌟 Features
 
 - 👤 Personalized user profiles with follow system and progress tracking
-- 🔐 Secure authentication via traditional login or OAuth 2.0 (Google, Facebook)
-- 🖼️ Upload up to 3 images or 30s video per post with descriptions and tips
+- 🔐 Secure authentication via traditional login or OAuth 2.0 (Google)
+- 🖼️ Upload up to 3 images or a 30s video per post with descriptions and tips
 - 📈 Track cooking progress, tutorials completed, and personal achievements
 - 📋 Create structured cooking plans and publish detailed recipes
 - 💬 Like and comment on posts; moderate interactions on your own posts
@@ -29,7 +29,6 @@ Cooking Mastery is an innovative web-based platform that empowers food lovers to
 - **Frontend**: React.js
 - **Backend**: Spring Boot (REST API with HATEOAS)
 - **Authentication**: OAuth 2.0
-- **Real-time**: WebSocket
 - **Database**: MongoDB
 - **Media Storage**: Firebase
 - **Others**: Bootstrap, CSS, REST API, JSON
