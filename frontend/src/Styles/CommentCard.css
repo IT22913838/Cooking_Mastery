@@ -1,0 +1,58 @@
+/* ../Styles/CommentCard.css */
+
+.comment-item {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.comment-item:hover {
+  transform: translateY(-2px);
+}
+
+.comment-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.comment-avatar {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.comment-avatar:hover {
+  transform: scale(1.05);
+}
+
+.comment-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-user {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d35400;
+  margin-bottom: 4px;
+}
+
+.comment-text {
+  font-size: 15px;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.comment-time {
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+}
