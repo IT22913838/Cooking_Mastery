@@ -8,7 +8,6 @@ Cooking Mastery is an innovative web-based platform that empowers food lovers to
 - [Tech Stack](#-tech-stack)
 - [Installation](#-installation)
 - [Usage](#-usage)
-- [API Endpoints](#-api-endpoints)
 - [Contributing](#-contributing)
 - [License](#-license)
 - [Authors](#-authors)
@@ -53,7 +52,7 @@ cd cooking-mastery
 ```bash
 cd backend
 # Configure application.properties with DB and Firebase settings
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 ## 3. Frontend Setup
 ```bash
@@ -76,7 +75,7 @@ npm start
 
 ## 📸 UI
 
-## 📡 API Endpoints
+
 
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
