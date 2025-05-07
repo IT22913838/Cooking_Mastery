@@ -1,15 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { 
-  Avatar, 
-  Empty, 
-  Spin, 
-  message, 
-  Select, 
-  Radio, 
-  Space, 
-  Button 
-} from "antd";
-import { FilterOutlined, CloseOutlined } from "@ant-design/icons";
+import { Avatar, Empty, Spin, message } from "antd";
 import TobBox from "./TobBox";
 import { useSnapshot } from "valtio";
 import state from "../../Utils/Store";
@@ -27,19 +17,15 @@ import Notifications from "./Notifications";
 import LearningDashboard from "./LearningDashboard";
 import MyLearning from "./MyLearning";
 
-const { Option } = Select;
-
 const CenterSection = () => {
   const snap = useSnapshot(state);
   const [loading, setLoading] = useState(false);
-  const [levelFilter, setLevelFilter] = useState('all');
-  const [statusFilter, setStatusFilter] = useState('all');
-  const [showFilters, setShowFilters] = useState(false);
 
   // Load posts for the feed
   useEffect(() => {
     PostService.getPosts()
       .then((result) => {
+        // Create a map of post IDs to avoid duplicates
         const uniquePosts = [];
         const seenIds = new Set();
         
@@ -57,13 +43,17 @@ const CenterSection = () => {
       });
   }, []);
 
-  // Load user-specific skill plans
+  // Load user-specific skill plans when the skill plans tab is active or user changes
   useEffect(() => {
     const loadUserSkillPlans = async () => {
-      if (snap.activeIndex !== 2 || !snap.currentUser?.uid) return;
+      // Only load skill plans if the skill plans tab is selected
+      if (snap.activeIndex !== 2 || !snap.currentUser?.uid) {
+        return;
+      }
 
       try {
         setLoading(true);
+        // Use our updated method for user-specific skill plans
         const userSkillPlans = await SkillPlanService.getUserSkillPlans(snap.currentUser.uid);
         state.skillPlans = userSkillPlans;
       } catch (err) {
@@ -76,15 +66,6 @@ const CenterSection = () => {
 
     loadUserSkillPlans();
   }, [snap.activeIndex, snap.currentUser?.uid]);
-
-  // Filter skill plans
-  const filteredPlans = snap.skillPlans?.filter(plan => {
-    const levelMatch = levelFilter === 'all' || plan.skillLevel === levelFilter;
-    const statusMatch = statusFilter === 'all' || 
-                       (statusFilter === 'completed' ? plan.isFinished : !plan.isFinished);
-    
-    return levelMatch && statusMatch;
-  }) || [];
 
   return (
     <div className="center">
@@ -121,77 +102,30 @@ const CenterSection = () => {
             <StateDebugger />
             <CreateSkillPlanBox />
             
-            {/* Toggle Filters Button */}
-            <div className="filter-toggle-container">
-              <Button 
-                type="text" 
-                icon={showFilters ? <CloseOutlined /> : <FilterOutlined />}
-                onClick={() => setShowFilters(!showFilters)}
-                className="filter-toggle-button"
-              >
-                {showFilters ? 'Hide Filters' : 'Show Filters'}
-              </Button>
-            </div>
-
-            {/* Filter Section */}
-            {showFilters && (
-              <div className="skill-plan-filters">
-                <Space size="middle" className="filter-controls">
-                  <Select
-                    value={levelFilter}
-                    onChange={setLevelFilter}
-                    style={{ width: 180 }}
-                    className="level-filter"
-                  >
-                    <Option value="all">All Levels</Option>
-                    <Option value="beginner">Beginner</Option>
-                    <Option value="intermediate">Intermediate</Option>
-                    <Option value="advanced">Advanced</Option>
-                  </Select>
-
-                  <Radio.Group 
-                    onChange={(e) => setStatusFilter(e.target.value)}
-                    value={statusFilter}
-                    className="status-filter"
-                  >
-                    <Radio.Button value="all">All</Radio.Button>
-                    <Radio.Button value="completed">Completed</Radio.Button>
-                    <Radio.Button value="in-progress">In Progress</Radio.Button>
-                  </Radio.Group>
-                </Space>
-              </div>
-            )}
-            
             {loading ? (
               <div className="loading-container">
                 <Spin size="large" />
               </div>
-            ) : filteredPlans.length > 0 ? (
+            ) : snap.skillPlans?.length > 0 ? (
               <div className="plans-grid">
-                {filteredPlans.map((plan) => (
+                {snap.skillPlans.map((plan) => (
                   <SkillPlanCard key={plan.id} plan={plan} />
                 ))}
               </div>
             ) : (
               <Empty 
-                description={
-                  snap.skillPlans?.length === 0 
-                    ? "You haven't created any skill plans yet" 
-                    : "No plans match your filters"
-                } 
+                description="You haven't created any skill plans yet" 
                 className="no-plans-message"
               />
             )}
           </div>
         )}
-        
-        {snap.activeIndex === 3 && (
+         {snap.activeIndex === 3 && (
           <div className="notifications-container">
             <LearningDashboard />
-            <MyLearning />
+            <MyLearning /> {/* Add MyLearning here */}
           </div>
         )}      
-        
         {snap.activeIndex === 4 && (
           <div className="friends-container">
             <FriendsSection />
