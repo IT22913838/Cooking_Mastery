@@ -82,11 +82,11 @@ npm start
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 👥 Authors
- - Dahanayake U.I.D – GitHub@IT22913838
+ - Dahanayake U.I.D – GitHub @IT22913838
 
- - Mudalige R M R W – GitHub@ruvi2001
+ - Mudalige R M R W – GitHub @ruvi2001
 
- - M P Bhagya – GitHub@MARASINGHAGEPIUMIBHAGYA
+ - M P Bhagya – GitHub @MARASINGHAGEPIUMIBHAGYA
 
  - Wijebandara W M P – GitHub@PulniSL
 
