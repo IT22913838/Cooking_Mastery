@@ -74,19 +74,20 @@ npm start
 
 ## 📸 UI
 
+![Home](https://github.com/user-attachments/assets/cf8c6ae9-307f-4a6b-9253-6e4595866fe8)
+
 
 
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 👥 Authors
- - Dahanayake U.I.D – GitHub
+ - Dahanayake U.I.D – GitHub@IT22913838
 
- - Mudalige R M R W – GitHub
+ - Mudalige R M R W – GitHub@ruvi2001
 
- - M P Bhagya – GitHub
+ - M P Bhagya – GitHub@MARASINGHAGEPIUMIBHAGYA
 
- - Wijebandara W M P – GitHub
+ - Wijebandara W M P – GitHub@PulniSL
 
-![Home](https://github.com/user-attachments/assets/cf8c6ae9-307f-4a6b-9253-6e4595866fe8)
 
